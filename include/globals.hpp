@@ -3,6 +3,8 @@
 #define GLOBALS_HPP
 
 #include "SceneManager.hpp"
+#include "Key.hpp"
+
 
 namespace globals
 {
@@ -11,7 +13,8 @@ namespace globals
                 STATE_RUN,
                 STATE_QUIT
             } state_e;
-    extern state_e global_state;
+    extern state_e globalState;
     extern SceneManager sceneManager;
+    extern Key key;
 }
 #endif /* GLOBALS_HPP */

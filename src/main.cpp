@@ -10,6 +10,9 @@
 #include <psp2/kernel/processmgr.h>
 
 #include <vita2d.h>
+//debug
+#include "debugScreen.h"
+#define printf psvDebugScreenPrintf
 
 //sound management headers
 #include <stdint.h>
@@ -26,12 +29,26 @@
 
 int main()
 {
+	psvDebugScreenInit();
+	// Key key;
+	// SceCtrlData pad;
+	// memset(&pad, 0, sizeof(pad));
+
+	// while (1) {
+	// 	sceCtrlPeekBufferPositive(0, &pad, 1);
+	// 	key.update(pad.buttons);
+	// 	// printf("Buttons:\n");
+	// 	if (key.getPressed() & SCE_CTRL_START)
+	// 		printf("Buttons:%08X == %08X\n", key.getDown(), key.getPressed());
+	// 	sceKernelDelayThread(1000 * 100);
+	// }
+
 	vita2d_init();
 
-	globals::global_state = globals::STATE_RUN;
+	globals::globalState = globals::STATE_RUN;
 
 	globals::sceneManager.load(ISceneControler::SPLASH_SCREEN);
-	while (globals::global_state == globals::STATE_RUN)
+	while (globals::globalState == globals::STATE_RUN)
 	{
 		 globals::sceneManager.getSceneControler()->handleInput();
 		 globals::sceneManager.clean();

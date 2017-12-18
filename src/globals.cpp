@@ -2,6 +2,7 @@
 
 namespace globals
 {
-    state_e global_state;
+    state_e globalState;
     SceneManager sceneManager;
+    Key key;
 }

@@ -21,6 +21,7 @@
 #include "SceneControler.hpp"
 #include "MainMenuModel.hpp"
 #include "MainMenuView.hpp"
+#include "ButtonModel.hpp"
 
 class MainMenuControler : public SceneControler
 {
@@ -29,7 +30,8 @@ class MainMenuControler : public SceneControler
         MainMenuView _view;
         SoLoud::Soloud _gSoloud; // SoLoud engine
         SoLoud::Wav _gWave;      // One wave file
-        SceCtrlData _pad;
+        ButtonModel _buttonModel1;
+        ButtonModel _buttonModel2;
     public:
         MainMenuControler();
     public:

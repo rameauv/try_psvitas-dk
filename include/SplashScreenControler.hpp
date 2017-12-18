@@ -28,7 +28,6 @@ class SplashScreenControler : public SceneControler
     private:
         SplashScreenModel _model;
         SplashScreenView _view;
-        SceCtrlData _pad;
     public:
         SplashScreenControler();
         virtual int handleInput();

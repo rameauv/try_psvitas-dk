@@ -2,19 +2,22 @@ TITLE_ID = VITA2DTST
 TARGET   = vita_dev_poc
 OBJS     = 	src/main.o \
 			src/globals.o \
+			src/Key.o \
 			src/SceneManager.o \
 			src/SceneControler.o \
 			src/SplashScreenControler.o \
 			src/SplashScreenView.o \
 			src/MainMenuControler.o \
-			src/MainMenuView.o
+			src/MainMenuView.o \
+			src/ButtonView.o \
+			src/ButtonModel.o
 			# ressources/image.o
 			
 PSVITAIP = 192.168.1.14
 
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lScePgf_stub -lScePvf_stub \
-	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lsoloud -lpthread -lm -lSceAudio_stub -lSceDisplay_stub
+	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lsoloud -lpthread -lm -lSceAudio_stub -lSceDisplay_stub -lSceNet_stub -lSceNetCtl_stub
 
 PREFIX  = arm-vita-eabi
 CXX      = $(PREFIX)-g++ -Iinclude

@@ -3,13 +3,12 @@
 
 SplashScreenControler::SplashScreenControler()
     : SceneControler(ISceneControler::SPLASH_SCREEN) {
-    memset(&this->_pad, 0, sizeof(this->_pad));
 }
 
 int SplashScreenControler::handleInput() {
     this->_view.render();
-    sceCtrlPeekBufferPositive(0, &this->_pad, 1);
-    if (this->_pad.buttons == SCE_CTRL_SELECT)
+    globals::key.update();
+    if (globals::key.getPressed() & SCE_CTRL_START)
     {
         globals::sceneManager.load(ISceneControler::MAIN_MENU);
         if (globals::sceneManager.getNewSceneControler())
