@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vita2d.h>
+#include <string>
 
 class ButtonModel
 {
@@ -10,10 +11,10 @@ class ButtonModel
         float _w;
         float _h;
         bool _state;
+        std::string _text;
     public:
         ButtonModel();
-        ButtonModel(float x, float y, float w, float h, bool state);
-        void init(float x, float y, float w, float h, bool state);
+        void init(float x, float y, float w, float h, bool state, const std::string& text);
         const ButtonModel* getInstance() const;
         void setX(float val);
         float getX() const;
@@ -25,4 +26,6 @@ class ButtonModel
         float getH() const;
         void setState(bool val);
         bool getState() const;
+        void setText(const std::string& val);
+        const std::string* getText() const;
 };

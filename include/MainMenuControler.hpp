@@ -32,6 +32,9 @@ class MainMenuControler : public SceneControler
         SoLoud::Wav _gWave;      // One wave file
         ButtonModel _buttonModel1;
         ButtonModel _buttonModel2;
+    private:
+        void hoverNext();
+        void hoverPrev();
     public:
         MainMenuControler();
     public:

@@ -3,20 +3,13 @@
 ButtonModel::ButtonModel() {
 }
 
-ButtonModel::ButtonModel(float x, float y, float w, float h, bool state) {
+void ButtonModel::init(float x, float y, float w, float h, bool state, const std::string& text) {
     this->_x = x;
     this->_y = y;
-    this->_w = x;
+    this->_w = w;
     this->_h = h;
     this->_state = state;
-}
-
-void ButtonModel::init(float x, float y, float w, float h, bool state) {
-    this->_x = x;
-    this->_y = y;
-    this->_w = x;
-    this->_h = h;
-    this->_state = state;
+    this->_text = text;
 }
 
 const ButtonModel* ButtonModel::getInstance() const {
@@ -54,10 +47,19 @@ void ButtonModel::setH(float val) {
 float ButtonModel::getH() const {
     return (this->_h);
 }
+
 void ButtonModel::setState(bool val) {
     this->_state = val;
 }
 
 bool ButtonModel::getState() const {
     return (this->_state);
+}
+
+void ButtonModel::setText(const std::string& val) {
+    this->_text = val;
+}
+
+const std::string* ButtonModel::getText() const {
+    return (&this->_text);
 }

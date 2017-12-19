@@ -10,11 +10,13 @@ MainMenuView::~MainMenuView() {
     vita2d_free_pvf(this->_pvf);
 }
 
-void MainMenuView::render(float x, float y, const ButtonModel* model_instance1, const ButtonModel* model_instance2) {
+void MainMenuView::render(const MainMenuModel* model) {
+    if (!model)
+        return;
     vita2d_start_drawing();
     vita2d_clear_screen();
 
-    vita2d_draw_rectangle(x, y, 400, 250, RGBA8(255, 0, 0, 255));
+    vita2d_draw_rectangle(model->getX(), model->getY(), 400, 250, RGBA8(255, 0, 0, 255));
     vita2d_draw_rectangle(680, 350, 100, 150, RGBA8(0, 0, 255, 255));
     vita2d_draw_fill_circle(200, 420, 100, RGBA8(0, 255,0 ,255));
 
@@ -26,8 +28,8 @@ void MainMenuView::render(float x, float y, const ButtonModel* model_instance1, 
 
     vita2d_pvf_draw_text(this->_pvf, 700, 80, RGBA8(0,255,0,255), 1.0f, "PVF Font sample!");
 
-    this->_buttonView.render(model_instance1);
-    this->_buttonView.render(model_instance2);
+    for (int i = 0; i < model->getButtons()->size(); i++)
+        this->_buttonView.render((*model->getButtons())[i].getInstance());
     vita2d_end_drawing();
     vita2d_swap_buffers();
 };

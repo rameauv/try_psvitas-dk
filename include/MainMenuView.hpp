@@ -4,7 +4,7 @@
 
 #include <vita2d.h>
 #include "ButtonView.hpp"
-#include "ButtonModel.hpp"
+#include "MainMenuModel.hpp"
 
 class MainMenuView
 {
@@ -16,6 +16,6 @@ class MainMenuView
         MainMenuView();
         ~MainMenuView();
     public:
-        void render(float x, float y, const ButtonModel* model_instance1, const ButtonModel* model_instance2);
+        void render(const MainMenuModel* model);
 };
 #endif /* MAINMENUVIEW_HPP */

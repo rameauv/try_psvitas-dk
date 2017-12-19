@@ -5,8 +5,6 @@ MainMenuControler::MainMenuControler()
     : SceneControler(ISceneControler::SPLASH_SCREEN) {
     this->_gSoloud.init(); // Initialize SoLoud
     this->_gWave.load("ux0:/music.ogg"); // Load a wave
-    this->_buttonModel1.init(50, 50, 100, 20, true);
-    this->_buttonModel2.init(50, 100, 100, 20, false);
 }
 
 void MainMenuControler::init() {
@@ -14,21 +12,14 @@ void MainMenuControler::init() {
 }
 
 int MainMenuControler::handleInput() {
-    this->_view.render(this->_model.getX(), this->_model.getY(), this->_buttonModel1.getInstance(), this->_buttonModel2.getInstance());
-    // sceCtrlPeekBufferPositive(0, &this->_pad, 1);
+    this->_view.render(this->_model.getInstance());
     globals::key.update();
-    if (globals::key.getPressed() & SCE_CTRL_START)
+    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState())
 		globals::globalState = globals::STATE_QUIT;
     if (globals::key.getPressed() & SCE_CTRL_UP)
-    {
-        this->_buttonModel1.setState(!this->_buttonModel1.getState());
-        this->_buttonModel2.setState(!this->_buttonModel1.getState());
-    }
+        this->hoverPrev();
     if (globals::key.getPressed() & SCE_CTRL_DOWN)
-    {
-        this->_buttonModel1.setState(!this->_buttonModel1.getState());
-        this->_buttonModel2.setState(!this->_buttonModel1.getState());
-    }
+        this->hoverNext();
     if (globals::key.getDown() & SCE_CTRL_UP)
         this->_model.setY(this->_model.getY() - 1);
     if (globals::key.getDown() & SCE_CTRL_DOWN)
@@ -37,4 +28,30 @@ int MainMenuControler::handleInput() {
         this->_model.setX(this->_model.getX() - 1);
     if (globals::key.getDown() & SCE_CTRL_RIGHT)
         this->_model.setX(this->_model.getX() + 1);
+}
+
+void MainMenuControler::hoverNext() {
+    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size())
+    {
+        (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
+        (*this->_model.getButtonsM())[this->_model.getHoverButtonId() + 1].setState(true);
+        this->_model.setHoverButtonId(this->_model.getHoverButtonId() + 1);
+        return;
+    }
+    (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
+    (*this->_model.getButtonsM())[0].setState(true);
+    this->_model.setHoverButtonId(0);
+}
+
+void MainMenuControler::hoverPrev() {
+    if (this->_model.getHoverButtonId() > 0)
+    {
+        (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
+        (*this->_model.getButtonsM())[this->_model.getHoverButtonId() - 1].setState(true);
+        this->_model.setHoverButtonId(this->_model.getHoverButtonId() - 1);
+        return;
+    }
+    (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
+    (*this->_model.getButtonsM())[this->_model.getButtons()->size()-1].setState(true);
+    this->_model.setHoverButtonId(this->_model.getButtons()->size()-1);
 }
