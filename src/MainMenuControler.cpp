@@ -1,5 +1,6 @@
 #include "MainMenuControler.hpp"
 #include "globals.hpp"
+#include <chrono>
 
 MainMenuControler::MainMenuControler()
     : SceneControler(ISceneControler::SPLASH_SCREEN) {
@@ -14,7 +15,7 @@ void MainMenuControler::init() {
 int MainMenuControler::handleInput() {
     this->_view.render(this->_model.getInstance());
     globals::key.update();
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState())
+    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
 		globals::globalState = globals::STATE_QUIT;
     if (globals::key.getPressed() & SCE_CTRL_UP)
         this->hoverPrev();

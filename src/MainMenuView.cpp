@@ -1,6 +1,7 @@
 #include "MainMenuView.hpp"
 
-MainMenuView::MainMenuView() {
+MainMenuView::MainMenuView()
+    : _buttons(3) {
     this->_pgf = vita2d_load_default_pgf();
     this->_pvf = vita2d_load_default_pvf();
 }
@@ -29,7 +30,10 @@ void MainMenuView::render(const MainMenuModel* model) {
     vita2d_pvf_draw_text(this->_pvf, 700, 80, RGBA8(0,255,0,255), 1.0f, "PVF Font sample!");
 
     for (int i = 0; i < model->getButtons()->size(); i++)
-        this->_buttonView.render((*model->getButtons())[i].getInstance());
+    {
+        if (i < this->_buttons.size())
+            this->_buttons[i].render((*model->getButtons())[i].getInstance());
+    }
     vita2d_end_drawing();
     vita2d_swap_buffers();
 };
