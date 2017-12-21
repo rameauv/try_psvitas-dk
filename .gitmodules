@@ -1,0 +1,3 @@
+[submodule "vitasdk-installer"]
+	path = vitasdk-installer
+	url = https://github.com/vitasdk/vdpm.git
