@@ -14,6 +14,7 @@ class ButtonView
         bool _firstAnim;
     public:
         ButtonView();
+        ~ButtonView();
     public:
         void render(const ButtonModel* model_instance);
 };

@@ -6,6 +6,10 @@ ButtonView::ButtonView () {
     this->_firstAnim = true;
 }
 
+ButtonView::~ButtonView () {
+    vita2d_free_pgf(this->_pgf);
+}
+
 void ButtonView::render(const ButtonModel* model_instance)
 {
     std::string a;
