@@ -4,17 +4,30 @@
 
 MainMenuControler::MainMenuControler()
     : SceneControler(ISceneControler::SPLASH_SCREEN) {
-    this->_gSoloud.init(); // Initialize SoLoud
-    this->_gWave.load("ux0:/music.ogg"); // Load a wave
+    this->_gSoloud = new SoLoud::Soloud;
+    this->_gWave = new SoLoud::Wav;
+    this->_gSoloud->init(); // Initialize SoLoud
+    this->_gWave->load("ux0:/music.ogg"); // Load a wave
+}
+
+MainMenuControler::~MainMenuControler() {
+    this->_gSoloud->deinit();
+    delete this->_gSoloud;
+    delete this->_gWave;
 }
 
 void MainMenuControler::init() {
-    this->_gSoloud.play(this->_gWave); // Play the wave
+    this->_gSoloud->play(*this->_gWave); // Play the wave
 }
 
 int MainMenuControler::handleInput() {
     this->_view.render(this->_model.getInstance());
     globals::key.update();
+    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
+        globals::sceneManager.load(ISceneControler::MAIN_MENU);
+        if (globals::sceneManager.getNewSceneControler())
+            ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
+    }
     if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
 		globals::globalState = globals::STATE_QUIT;
     if (globals::key.getPressed() & SCE_CTRL_UP)

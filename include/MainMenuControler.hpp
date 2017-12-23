@@ -28,8 +28,8 @@ class MainMenuControler : public SceneControler
     private:
         MainMenuModel _model;
         MainMenuView _view;
-        SoLoud::Soloud _gSoloud; // SoLoud engine
-        SoLoud::Wav _gWave;      // One wave file
+        SoLoud::Soloud* _gSoloud; // SoLoud engine
+        SoLoud::Wav* _gWave;      // One wave file
         ButtonModel _buttonModel1;
         ButtonModel _buttonModel2;
     private:
@@ -37,6 +37,7 @@ class MainMenuControler : public SceneControler
         void hoverPrev();
     public:
         MainMenuControler();
+        ~MainMenuControler();
     public:
         void init();
         virtual int handleInput();

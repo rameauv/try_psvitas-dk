@@ -29,7 +29,7 @@
 
 int main()
 {
-	psvDebugScreenInit();
+	// psvDebugScreenInit();
 	// Key key;
 	// SceCtrlData pad;
 	// memset(&pad, 0, sizeof(pad));
