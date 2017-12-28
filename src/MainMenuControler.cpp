@@ -6,18 +6,18 @@ MainMenuControler::MainMenuControler()
     : SceneControler(ISceneControler::MAIN_MENU) {
     this->_gSoloud = new SoLoud::Soloud;
     this->_gWave = new SoLoud::Wav;
-    this->_gSoloud->init(); // Initialize SoLoud
-    this->_gWave->load("ux0:/music.ogg"); // Load a wave
+    // this->_gSoloud->init(); // Initialize SoLoud
+    // this->_gWave->load("ux0:/music.ogg"); // Load a wave
 }
 
 MainMenuControler::~MainMenuControler() {
-    this->_gSoloud->deinit();
+    // this->_gSoloud->deinit();
     delete this->_gSoloud;
     delete this->_gWave;
 }
 
 void MainMenuControler::init() {
-    this->_gSoloud->play(*this->_gWave); // Play the wave
+    // this->_gSoloud->play(*this->_gWave); // Play the wave
 }
 
 int MainMenuControler::handleInput() {
