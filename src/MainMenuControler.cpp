@@ -3,7 +3,7 @@
 #include <chrono>
 
 MainMenuControler::MainMenuControler()
-    : SceneControler(ISceneControler::SPLASH_SCREEN) {
+    : SceneControler(ISceneControler::MAIN_MENU) {
     this->_gSoloud = new SoLoud::Soloud;
     this->_gWave = new SoLoud::Wav;
     this->_gSoloud->init(); // Initialize SoLoud
