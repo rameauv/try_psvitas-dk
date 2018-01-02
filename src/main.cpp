@@ -14,14 +14,16 @@
 
 int main()
 {
+	#ifdef VITA
+		psvDebugScreenInit();
+	#endif
 	Graphic::init();
 	globals::globalState = globals::STATE_RUN;
-
 	globals::sceneManager.load(ISceneControler::SPLASH_SCREEN);
 	while (globals::globalState == globals::STATE_RUN)
 	{
-		 globals::sceneManager.getSceneControler()->handleInput();
-		 globals::sceneManager.clean();
+		globals::sceneManager.getSceneControler()->handleInput();
+		globals::sceneManager.clean();
 	}
 	Graphic::deinit();
 	#ifdef VITA
