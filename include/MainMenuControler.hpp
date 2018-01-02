@@ -37,7 +37,7 @@ class MainMenuControler : public SceneControler
         void hoverPrev();
     public:
         MainMenuControler();
-        ~MainMenuControler();
+        virtual ~MainMenuControler();
     public:
         void init();
         virtual int handleInput();

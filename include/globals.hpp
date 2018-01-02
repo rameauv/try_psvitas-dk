@@ -1,10 +1,7 @@
 #pragma once
-#ifndef GLOBALS_HPP
-#define GLOBALS_HPP
 
 #include "SceneManager.hpp"
 #include "Key.hpp"
-
 
 namespace globals
 {
@@ -17,4 +14,3 @@ namespace globals
     extern SceneManager sceneManager;
     extern Key key;
 }
-#endif /* GLOBALS_HPP */

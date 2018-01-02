@@ -42,6 +42,7 @@ int MainMenuControler::handleInput() {
         this->_model.setX(this->_model.getX() - 1);
     if (globals::key.getDown() & SCE_CTRL_RIGHT)
         this->_model.setX(this->_model.getX() + 1);
+    return (0);
 }
 
 void MainMenuControler::hoverNext() {

@@ -2,7 +2,8 @@ TITLE_ID = VITA2DTST
 TARGET   = vita_dev_poc
 OBJS     = 	src/main.o \
 			src/globals.o \
-			src/Key.o \
+			src/KeyVita.o \
+			src/GraphicVita.o \
 			src/SceneManager.o \
 			src/SceneControler.o \
 			src/SplashScreenControler.o \
@@ -20,9 +21,9 @@ LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lsoloud -lpthread -lm -lSceAudio_stub -lSceDisplay_stub -lSceNet_stub -lSceNetCtl_stub
 
 PREFIX  = arm-vita-eabi
-CXX      = $(PREFIX)-g++ -Iinclude
-CFLAGS  = -Wl,-q -Wall -fno-lto
-ASFLAGS = $(CFLAGS)
+CXX      = $(PREFIX)-g++ -Iinclude -I.
+CXXFLAGS  = -DVITA -Wl,-q -Wall -Werror -fno-lto
+ASFLAGS = $(CXXFLAGS)
 
 all: $(TARGET).vpk
 
@@ -37,7 +38,7 @@ eboot.bin: $(TARGET).velf
 	vita-elf-create $< $@
 
 $(TARGET).elf: $(OBJS)
-	$(CXX) $(CFLAGS) $^ $(LIBS) -o $@
+	$(CXX) $(CXXFLAGS) $^ $(LIBS) -o $@
 
 # %.o: %.png
 	# $(PREFIX)-ld -r -b binary -o $@ $^

@@ -13,6 +13,8 @@ void SceneManager::load(ISceneControler::sceneControlerId_e sceneControlerId) {
         case ISceneControler::MAIN_MENU :
             this->_newSceneControler = new MainMenuControler();
             break;
+        default:
+            break;
     }
     if (this->_sceneControler == nullptr)
         this->clean();
@@ -36,7 +38,12 @@ void SceneManager::clean() {
     if (this->_newSceneControler == nullptr)
         return ;
     if (this->_sceneControler)
-        delete this->_sceneControler;
+    {
+        if (this->_sceneControler->getId() == ISceneControler::MAIN_MENU)
+            delete (MainMenuControler*)this->_sceneControler;
+        if (this->_sceneControler->getId() == ISceneControler::SPLASH_SCREEN)
+            delete (SplashScreenControler*)this->_sceneControler;
+    }
     this->_sceneControler = this->_newSceneControler;
     this->_newSceneControler = nullptr;
 }

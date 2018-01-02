@@ -29,7 +29,7 @@ void MainMenuView::render(const MainMenuModel* model) {
 
     vita2d_pvf_draw_text(this->_pvf, 700, 80, RGBA8(0,255,0,255), 1.0f, "PVF Font sample!");
 
-    for (int i = 0; i < model->getButtons()->size(); i++)
+    for (unsigned int i = 0; i < model->getButtons()->size(); i++)
     {
         if (i < this->_buttons.size())
             this->_buttons[i].render((*model->getButtons())[i].getInstance());

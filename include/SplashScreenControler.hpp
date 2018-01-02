@@ -30,6 +30,7 @@ class SplashScreenControler : public SceneControler
         SplashScreenView _view;
     public:
         SplashScreenControler();
+        virtual ~SplashScreenControler();
         virtual int handleInput();
 };
 #endif /* SPLASHSCREENCONTROLER_HPP */

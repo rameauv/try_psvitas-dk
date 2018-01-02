@@ -10,7 +10,7 @@ class MainMenuModel
         float _x = 50;
         float _y = 50;
         std::vector<ButtonModel> _buttons;
-        int _hoverButtonId;
+        unsigned int _hoverButtonId;
     public:
         MainMenuModel():_buttons(3) {
             this->_hoverButtonId = 0;
@@ -24,8 +24,8 @@ class MainMenuModel
         float getY() const {return(this->_y);}
         const std::vector<ButtonModel>* getButtons() const {return(&(this->_buttons));}
         std::vector<ButtonModel>* getButtonsM(){return(&(this->_buttons));}
-        int getHoverButtonId() const {return (this->_hoverButtonId);}
-        float setX(float val){this->_x = val;}
-        float setY(float val){this->_y = val;}
+        unsigned int getHoverButtonId() const {return (this->_hoverButtonId);}
+        void setX(float val){this->_x = val;}
+        void setY(float val){this->_y = val;}
         void setHoverButtonId(int val) {this->_hoverButtonId = val;}
 };

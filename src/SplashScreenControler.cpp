@@ -5,6 +5,9 @@ SplashScreenControler::SplashScreenControler()
     : SceneControler(ISceneControler::SPLASH_SCREEN) {
 }
 
+SplashScreenControler::~SplashScreenControler() {
+}
+
 int SplashScreenControler::handleInput() {
     this->_view.render();
     globals::key.update();
@@ -14,4 +17,5 @@ int SplashScreenControler::handleInput() {
         if (globals::sceneManager.getNewSceneControler())
             ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
     }
+    return (0);
 }
