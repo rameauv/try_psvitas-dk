@@ -1,5 +1,4 @@
 #include "ButtonView.hpp"
-#include <string>
 
 ButtonView::ButtonView () {
     this->_pgf = vita2d_load_default_pgf();
@@ -40,5 +39,5 @@ void ButtonView::render(const ButtonModel* model_instance)
     }
     // a = std::to_string(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->_lastAnimTime).count());
     // vita2d_pgf_draw_text(this->_pgf, 400, 400, RGBA8(0,255,0,255), 1.0f, a.c_str());
-    // vita2d_pgf_draw_text(this->_pgf, model_instance->getX(), model_instance->getY() + vita2d_pgf_text_height(this->_pgf, 1, model_instance->getText()->c_str()), RGBA8(0,255,0,255), 1.0f, model_instance->getText()->c_str());
+    vita2d_pgf_draw_text(this->_pgf, model_instance->getX(), model_instance->getY() + vita2d_pgf_text_height(this->_pgf, 1, model_instance->getText()->c_str()), RGBA8(0,255,0,255), 1.0f, model_instance->getText()->c_str());
 }
