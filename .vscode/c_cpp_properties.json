@@ -14,7 +14,6 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "/usr/local/vitasdk/arm-vita-eabi/include",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
@@ -30,8 +29,33 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
+                "${workspaceRoot}",
+                "${workspaceRoot}/include"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "/usr/local/vitasdk/arm-vita-eabi/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "PSVITA",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
                 "/usr/local/vitasdk/arm-vita-eabi/include",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0",
+                "${workspaceRoot}/include",
+                "/usr/local/vitasdk/arm-vita-eabi/include/libk",
+                "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0/arm-vita-eabi"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
