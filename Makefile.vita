@@ -9,6 +9,9 @@ OBJS     = 	src/main.o \
 			src/SplashScreenControler.o \
 			src/SplashScreenView.o \
 			src/MainMenuControler.o \
+			src/SettingsView.o \
+			src/SettingsControler.o \
+			src/SettingsModel.o \
 			src/MainMenuView.o \
 			src/ButtonView.o \
 			src/ButtonModel.o

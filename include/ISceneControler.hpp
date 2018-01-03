@@ -11,6 +11,7 @@ class ISceneControler
             SPLASH_SCREEN,
             TITLE_MENU,
             MAIN_MENU,
+            SETTINGS
         } sceneControlerId_e;
     public:
         virtual sceneControlerId_e getId() = 0;
