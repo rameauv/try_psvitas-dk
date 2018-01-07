@@ -8,7 +8,6 @@ class SettingsView
 {
     private:
         vita2d_pgf *_pgf;
-        vita2d_pvf *_pvf;
         ButtonView _buttonView;
         std::vector<ButtonView> _buttons;
     public:
