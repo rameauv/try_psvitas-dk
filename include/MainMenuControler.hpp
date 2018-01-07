@@ -4,9 +4,6 @@
 #include <stdlib.h>
 
 #include <psp2/ctrl.h>
-#include <psp2/kernel/processmgr.h>
-
-#include <vita2d.h>
 
 // //sound management headers
 // #include <stdint.h>
