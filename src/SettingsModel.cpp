@@ -1,6 +1,6 @@
 #include "SettingsModel.hpp"
 
-SettingsModel::SettingsModel():_buttons(3) {
+SettingsModel::SettingsModel():_buttons(2) {
     this->_hoverButtonId = 0;
     this->_buttons[0].init(50, 50, 200, 100, true, std::string("Return"));
     this->_buttons[1].init(50, 250, 200, 100, false, std::string("Setting1"));
