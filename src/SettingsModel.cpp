@@ -2,9 +2,8 @@
 
 SettingsModel::SettingsModel():_buttons(3) {
     this->_hoverButtonId = 0;
-    this->_buttons[0].init(50, 50, 200, 100, true, std::string("Setting1"));
-    this->_buttons[1].init(50, 250, 200, 100, false, std::string("Setting2"));
-    this->_buttons[2].init(0, 850, 200, 100, false, std::string("return"));
+    this->_buttons[0].init(50, 50, 200, 100, true, std::string("Return"));
+    this->_buttons[1].init(50, 250, 200, 100, false, std::string("Setting1"));
 }
 
 const SettingsModel* SettingsModel::getInstance() const {

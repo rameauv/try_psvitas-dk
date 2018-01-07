@@ -1,7 +1,7 @@
 #include "SettingsView.hpp"
 
 SettingsView::SettingsView()
-    : _buttons(3) {
+    : _buttons(2) {
     this->_pgf = vita2d_load_default_pgf();
     this->_pvf = vita2d_load_default_pvf();
 }
