@@ -3,6 +3,7 @@
 #include "ISceneControler.hpp"
 #include "SplashScreenControler.hpp"
 #include "MainMenuControler.hpp"
+#include "SettingsControler.hpp"
 #include "GameControler.hpp"
 
 class SceneManager
