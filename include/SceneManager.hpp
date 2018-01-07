@@ -1,10 +1,9 @@
 #pragma once
-#ifndef SCENEMANAGER_HPP
-#define SCENEMANAGER_HPP
 
 #include "ISceneControler.hpp"
 #include "SplashScreenControler.hpp"
 #include "MainMenuControler.hpp"
+#include "GameControler.hpp"
 
 class SceneManager
 {
@@ -20,4 +19,3 @@ class SceneManager
         ISceneControler::sceneControlerId_e getNewControlerId();
         void clean();
 };
-#endif /* SCENEMANAGER_HPP */

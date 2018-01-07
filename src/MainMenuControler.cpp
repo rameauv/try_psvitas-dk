@@ -24,7 +24,7 @@ int MainMenuControler::handleInput() {
     this->_view.render(this->_model.getInstance());
     globals::key.update();
     if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
-        globals::sceneManager.load(ISceneControler::MAIN_MENU);
+        globals::sceneManager.load(ISceneControler::GAME);
         if (globals::sceneManager.getNewSceneControler())
             ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
     }
@@ -51,8 +51,7 @@ int MainMenuControler::handleInput() {
 }
 
 void MainMenuControler::hoverNext() {
-    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size())
-    {
+    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size()) {
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId() + 1].setState(true);
         this->_model.setHoverButtonId(this->_model.getHoverButtonId() + 1);
@@ -64,8 +63,7 @@ void MainMenuControler::hoverNext() {
 }
 
 void MainMenuControler::hoverPrev() {
-    if (this->_model.getHoverButtonId() > 0)
-    {
+    if (this->_model.getHoverButtonId() > 0) {
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId() - 1].setState(true);
         this->_model.setHoverButtonId(this->_model.getHoverButtonId() - 1);

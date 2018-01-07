@@ -48,26 +48,26 @@
         {
             "name": "PSVITA",
             "includePath": [
-                "/usr/include",
-                "/usr/local/include",
-                "/usr/local/vitasdk/arm-vita-eabi/include",
                 "${workspaceRoot}",
-                "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0",
                 "${workspaceRoot}/include",
+                "/usr/local/vitasdk/arm-vita-eabi/include",
                 "/usr/local/vitasdk/arm-vita-eabi/include/libk",
+                "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0",
                 "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0/arm-vita-eabi"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
-                    "/usr/include",
-                    "/usr/local/include",
-                    "/usr/local/vitasdk/arm-vita-eabi/include",
-                    "${workspaceRoot}"
+                "${workspaceRoot}",
+                "${workspaceRoot}/include",
+                "/usr/local/vitasdk/arm-vita-eabi/include",
+                "/usr/local/vitasdk/arm-vita-eabi/include/libk",
+                "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0",
+                "/usr/local/vitasdk/arm-vita-eabi/include/c++/7.2.0/arm-vita-eabi"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
+                "databaseFilename": ".vscode/intellisense-db/intellisense"
             }
         },
         {

@@ -12,6 +12,8 @@ OBJS     = 	src/main.o \
 			src/SettingsView.o \
 			src/SettingsControler.o \
 			src/SettingsModel.o \
+			src/GameView.o \
+			src/GameControler.o \
 			src/MainMenuView.o \
 			src/ButtonView.o \
 			src/ButtonModel.o

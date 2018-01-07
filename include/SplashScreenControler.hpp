@@ -1,6 +1,4 @@
 #pragma once
-#ifndef SPLASHSCREENCONTROLER_HPP
-#define SPLASHSCREENCONTROLER_HPP
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -33,4 +31,3 @@ class SplashScreenControler : public SceneControler
         virtual ~SplashScreenControler();
         virtual int handleInput();
 };
-#endif /* SPLASHSCREENCONTROLER_HPP */
