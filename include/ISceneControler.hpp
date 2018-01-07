@@ -5,8 +5,7 @@
 class ISceneControler
 {
     public:
-        typedef enum sceneControlerId
-        {
+        typedef enum sceneControlerId {
             UNKNOW,
             SPLASH_SCREEN,
             TITLE_MENU,

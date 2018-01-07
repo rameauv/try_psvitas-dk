@@ -46,8 +46,7 @@ int MainMenuControler::handleInput() {
 }
 
 void MainMenuControler::hoverNext() {
-    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size())
-    {
+    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size()) {
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId() + 1].setState(true);
         this->_model.setHoverButtonId(this->_model.getHoverButtonId() + 1);
@@ -59,8 +58,7 @@ void MainMenuControler::hoverNext() {
 }
 
 void MainMenuControler::hoverPrev() {
-    if (this->_model.getHoverButtonId() > 0)
-    {
+    if (this->_model.getHoverButtonId() > 0) {
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId() - 1].setState(true);
         this->_model.setHoverButtonId(this->_model.getHoverButtonId() - 1);

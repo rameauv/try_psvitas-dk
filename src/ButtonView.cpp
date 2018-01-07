@@ -14,16 +14,13 @@ void ButtonView::render(const ButtonModel* model_instance)
     std::string a;
     if (!model_instance)
         return;
-    if (model_instance->getState())
-    {
-        if (this->_firstAnim)
-        {
+    if (model_instance->getState()) {
+        if (this->_firstAnim) {
             this->_lastAnimTime = std::chrono::high_resolution_clock::now();
             this->_firstAnim = false;
             this->_anim = true;
         }
-        if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->_lastAnimTime).count() > 500)
-        {
+        if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->_lastAnimTime).count() > 500) {
             this->_lastAnimTime = std::chrono::high_resolution_clock::now();
             this->_anim = !this->_anim;
         }
@@ -32,8 +29,7 @@ void ButtonView::render(const ButtonModel* model_instance)
         else
             vita2d_draw_rectangle(model_instance->getX(), model_instance->getY(), model_instance->getW(), model_instance->getH(), RGBA8(255, 255, 255, 255));    
     }
-    else
-    {
+    else {
         vita2d_draw_rectangle(model_instance->getX(), model_instance->getY(), model_instance->getW(), model_instance->getH(), RGBA8(255, 255, 255, 255));
         this->_firstAnim = true;
     }
