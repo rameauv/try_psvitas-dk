@@ -5,6 +5,7 @@
 #include "ISceneControler.hpp"
 #include "SplashScreenControler.hpp"
 #include "MainMenuControler.hpp"
+#include "GameControler.hpp"
 
 class SceneManager
 {

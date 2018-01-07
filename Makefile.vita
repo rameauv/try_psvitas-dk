@@ -9,6 +9,8 @@ OBJS     = 	src/main.o \
 			src/SplashScreenControler.o \
 			src/SplashScreenView.o \
 			src/MainMenuControler.o \
+			src/GameView.o \
+			src/GameControler.o \
 			src/MainMenuView.o \
 			src/ButtonView.o \
 			src/ButtonModel.o
