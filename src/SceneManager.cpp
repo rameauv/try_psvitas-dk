@@ -13,6 +13,9 @@ void SceneManager::load(ISceneControler::sceneControlerId_e sceneControlerId) {
         case ISceneControler::MAIN_MENU :
             this->_newSceneControler = new MainMenuControler();
             break;
+        case ISceneControler::SETTINGS:
+            this->_newSceneControler = new SettingsControler();
+            break;
         case ISceneControler::GAME:
             this->_newSceneControler = new GameControler();
             break;

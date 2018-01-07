@@ -3,7 +3,7 @@
 #include <chrono>
 
 SettingsControler::SettingsControler()
-    : SceneControler(ISceneControler::MAIN_MENU) {
+    : SceneControler(ISceneControler::SETTINGS) {
     // this->_gSoloud = new SoLoud::Soloud;
     // this->_gWave = new SoLoud::Wav;
     // this->_gSoloud->init(); // Initialize SoLoud
