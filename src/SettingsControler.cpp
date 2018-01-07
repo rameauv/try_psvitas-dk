@@ -28,8 +28,6 @@ int SettingsControler::handleInput() {
         if (globals::sceneManager.getNewSceneControler())
             ((SettingsControler*)globals::sceneManager.getNewSceneControler())->init();
     }
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
-		globals::globalState = globals::STATE_QUIT;
     if (globals::key.getPressed() & SCE_CTRL_UP)
         this->hoverPrev();
     if (globals::key.getPressed() & SCE_CTRL_DOWN)
