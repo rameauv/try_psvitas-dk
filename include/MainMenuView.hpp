@@ -1,6 +1,4 @@
 #pragma once
-#ifndef MAINMENUVIEW_HPP
-#define MAINMENUVIEW_HPP
 
 #include <vita2d.h>
 #include "ButtonView.hpp"
@@ -18,4 +16,3 @@ class MainMenuView
     public:
         void render(const MainMenuModel* model);
 };
-#endif /* MAINMENUVIEW_HPP */

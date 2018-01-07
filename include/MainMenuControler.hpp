@@ -1,6 +1,4 @@
 #pragma once
-#ifndef MAINMENUCONTROLER_HPP
-#define MAINMENUCONTROLER_HPP
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -42,4 +40,3 @@ class MainMenuControler : public SceneControler
         void init();
         virtual int handleInput();
 };
-#endif /* MAINMENUCONTROLER_HPP */

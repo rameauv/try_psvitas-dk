@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ISCENECONTROLER_HPP
-#define ISCENECONTROLER_HPP
 
 class ISceneControler
 {
@@ -16,4 +14,3 @@ class ISceneControler
         virtual sceneControlerId_e getId() = 0;
         virtual int handleInput() = 0;
 };
-#endif /* ISCENECONTROLER_HPP */
