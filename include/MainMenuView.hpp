@@ -7,7 +7,6 @@
 class MainMenuView
 {
     private:
-        vita2d_pgf *_pgf;
         ButtonView _buttonView;
         std::vector<ButtonView> _buttons;
     public:
