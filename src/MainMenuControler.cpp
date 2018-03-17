@@ -3,7 +3,7 @@
 #include <chrono>
 
 MainMenuControler::MainMenuControler()
-    : SceneControler(ISceneControler::MAIN_MENU) {
+    : SceneControler(Scene::MAIN_MENU) {
     // this->_gSoloud = new SoLoud::Soloud;
     // this->_gWave = new SoLoud::Wav;
     // this->_gSoloud->init(); // Initialize SoLoud
@@ -24,12 +24,12 @@ int MainMenuControler::handleInput() {
     this->_view.render(this->_model.getInstance());
     globals::key.update();
     if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
-        globals::sceneManager.load(ISceneControler::GAME);
+        globals::sceneManager.load(Scene::GAME);
         if (globals::sceneManager.getNewSceneControler())
             ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
     }
     if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState()) {
-        globals::sceneManager.load(ISceneControler::SETTINGS);
+        globals::sceneManager.load(Scene::SETTINGS);
         if (globals::sceneManager.getNewSceneControler())
             ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
     }

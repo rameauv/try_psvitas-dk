@@ -14,9 +14,9 @@ class SceneManager
     public:
         SceneManager();
     public:
-        void load(ISceneControler::sceneControlerId_e sceneControlerId);
+        void load(Scene::sceneControlerId_e sceneControlerId);
         ISceneControler* getSceneControler();
         ISceneControler* getNewSceneControler();
-        ISceneControler::sceneControlerId_e getNewControlerId();
+        Scene::sceneControlerId_e getNewControlerId();
         void clean();
 };

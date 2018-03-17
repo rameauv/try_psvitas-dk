@@ -2,7 +2,7 @@
 #include "globals.hpp"
 
 GameControler::GameControler()
-    : SceneControler(ISceneControler::GAME) {
+    : SceneControler(Scene::GAME) {
     // this->_gSoloud = new SoLoud::Soloud;
     // this->_gWave = new SoLoud::Wav;
     // this->_gSoloud->init(); // Initialize SoLoud
