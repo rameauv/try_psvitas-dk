@@ -8,10 +8,10 @@ class Animation {
         const vita2d_texture* _texture;
         int _col;
         int _line;
-        int _sprite_width;
-        int _sprite_height;
-        int _current_line;
-        int _current_col;
+        int _spriteWidth;
+        int _spriteHeight;
+        int _currentLine;
+        int _currentCol;
         int _duration;
         std::chrono::time_point<std::chrono::high_resolution_clock> _lastAnimTime;
     public:
