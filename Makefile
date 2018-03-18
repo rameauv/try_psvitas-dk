@@ -26,7 +26,7 @@ LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lsoloud -lpthread -lm -lSceAudio_stub -lSceDisplay_stub -lSceNet_stub -lSceNetCtl_stub
 
 PREFIX  = arm-vita-eabi
-CXX      = $(PREFIX)-g++ -Iinclude -I.
+CXX      = $(PREFIX)-g++ -std=gnu++17 -Iinclude -I.
 CXXFLAGS  = -DVITA -Wl,-q -Wall -Werror -fno-lto
 ASFLAGS = $(CXXFLAGS)
 
