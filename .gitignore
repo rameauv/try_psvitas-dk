@@ -4,3 +4,4 @@
 *.sfo
 *.bin
 *.vpk
+.vscode/intellisense-db
