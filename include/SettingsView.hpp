@@ -2,17 +2,17 @@
 
 #include <vita2d.h>
 #include "ButtonView.hpp"
-#include "MainMenuModel.hpp"
+#include "SettingsModel.hpp"
 
-class MainMenuView
+class SettingsView
 {
     private:
         vita2d_pgf *_pgf;
         ButtonView _buttonView;
         std::vector<ButtonView> _buttons;
     public:
-        MainMenuView();
-        ~MainMenuView();
+        SettingsView();
+        ~SettingsView();
     public:
-        void render(const MainMenuModel* model);
+        void render(const SettingsModel* model);
 };

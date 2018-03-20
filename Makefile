@@ -9,6 +9,11 @@ OBJS     = 	src/main.o \
 			src/SplashScreenControler.o \
 			src/SplashScreenView.o \
 			src/MainMenuControler.o \
+			src/SettingsView.o \
+			src/SettingsControler.o \
+			src/SettingsModel.o \
+			src/GameView.o \
+			src/GameControler.o \
 			src/MainMenuView.o \
 			src/ButtonView.o \
 			src/ButtonModel.o
@@ -21,7 +26,7 @@ LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lsoloud -lpthread -lm -lSceAudio_stub -lSceDisplay_stub -lSceNet_stub -lSceNetCtl_stub
 
 PREFIX  = arm-vita-eabi
-CXX      = $(PREFIX)-g++ -Iinclude -I.
+CXX      = $(PREFIX)-g++ -std=gnu++17 -Iinclude -I.
 CXXFLAGS  = -DVITA -Wl,-q -Wall -Werror -fno-lto
 ASFLAGS = $(CXXFLAGS)
 

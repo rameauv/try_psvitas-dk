@@ -19,9 +19,8 @@ int main()
 	#endif
 	Graphic::init();
 	globals::globalState = globals::STATE_RUN;
-	globals::sceneManager.load(ISceneControler::SPLASH_SCREEN);
-	while (globals::globalState == globals::STATE_RUN)
-	{
+	globals::sceneManager.load(Scene::SPLASH_SCREEN);
+	while (globals::globalState == globals::STATE_RUN) {
 		globals::sceneManager.getSceneControler()->handleInput();
 		globals::sceneManager.clean();
 	}

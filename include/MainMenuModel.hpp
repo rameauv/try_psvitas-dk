@@ -14,9 +14,9 @@ class MainMenuModel
     public:
         MainMenuModel():_buttons(3) {
             this->_hoverButtonId = 0;
-            this->_buttons[0].init(50, 50, 200, 100, true, std::string("button1"));
-            this->_buttons[1].init(50, 250, 200, 100, false, std::string("button2"));
-            this->_buttons[2].init(50, 450, 200, 100, false, std::string("exit"));
+            this->_buttons[0].init(50, 50, 200, 100, true, std::string("Solo"));
+            this->_buttons[1].init(50, 250, 200, 100, false, std::string("Settings"));
+            this->_buttons[2].init(50, 450, 200, 100, false, std::string("Exit"));
         }
     public:
         const MainMenuModel* getInstance() const {return(this);}

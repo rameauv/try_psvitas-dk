@@ -4,6 +4,9 @@
 #include <stdlib.h>
 
 #include <psp2/ctrl.h>
+#include <psp2/kernel/processmgr.h>
+
+#include <vita2d.h>
 
 // //sound management headers
 // #include <stdint.h>
@@ -14,15 +17,15 @@
 // #include "soloud_speech.h"
 //
 #include "SceneControler.hpp"
-#include "MainMenuModel.hpp"
-#include "MainMenuView.hpp"
+#include "SettingsModel.hpp"
+#include "SettingsView.hpp"
 #include "ButtonModel.hpp"
 
-class MainMenuControler : public SceneControler
+class SettingsControler : public SceneControler
 {
     private:
-        MainMenuModel _model;
-        MainMenuView _view;
+        SettingsModel _model;
+        SettingsView _view;
         // SoLoud::Soloud* _gSoloud; // SoLoud engine
         // SoLoud::Wav* _gWave;      // One wave file
         ButtonModel _buttonModel1;
@@ -31,8 +34,8 @@ class MainMenuControler : public SceneControler
         void hoverNext();
         void hoverPrev();
     public:
-        MainMenuControler();
-        virtual ~MainMenuControler();
+        SettingsControler();
+        virtual ~SettingsControler();
     public:
         void init();
         virtual int handleInput();

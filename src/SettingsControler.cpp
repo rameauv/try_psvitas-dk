@@ -1,40 +1,33 @@
-#include "MainMenuControler.hpp"
+#include "SettingsControler.hpp"
 #include "globals.hpp"
 #include <chrono>
 
-MainMenuControler::MainMenuControler()
-    : SceneControler(Scene::MAIN_MENU) {
+SettingsControler::SettingsControler()
+    : SceneControler(Scene::SETTINGS) {
     // this->_gSoloud = new SoLoud::Soloud;
     // this->_gWave = new SoLoud::Wav;
     // this->_gSoloud->init(); // Initialize SoLoud
     // this->_gWave->load("ux0:/music.ogg"); // Load a wave
 }
 
-MainMenuControler::~MainMenuControler() {
+SettingsControler::~SettingsControler() {
     // this->_gSoloud->deinit();
     // delete this->_gSoloud;
     // delete this->_gWave;
 }
 
-void MainMenuControler::init() {
+void SettingsControler::init() {
     // this->_gSoloud->play(*this->_gWave); // Play the wave
 }
 
-int MainMenuControler::handleInput() {
+int SettingsControler::handleInput() {
     this->_view.render(this->_model.getInstance());
     globals::key.update();
     if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
-        globals::sceneManager.load(Scene::GAME);
+        globals::sceneManager.load(Scene::MAIN_MENU);
         if (globals::sceneManager.getNewSceneControler())
-            ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
+            ((SettingsControler*)globals::sceneManager.getNewSceneControler())->init();
     }
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState()) {
-        globals::sceneManager.load(Scene::SETTINGS);
-        if (globals::sceneManager.getNewSceneControler())
-            ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
-    }
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
-		globals::globalState = globals::STATE_QUIT;
     if (globals::key.getPressed() & SCE_CTRL_UP)
         this->hoverPrev();
     if (globals::key.getPressed() & SCE_CTRL_DOWN)
@@ -50,8 +43,9 @@ int MainMenuControler::handleInput() {
     return (0);
 }
 
-void MainMenuControler::hoverNext() {
-    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size()) {
+void SettingsControler::hoverNext() {
+    if (this->_model.getHoverButtonId() + 1 < this->_model.getButtons()->size())
+    {
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId() + 1].setState(true);
         this->_model.setHoverButtonId(this->_model.getHoverButtonId() + 1);
@@ -62,8 +56,9 @@ void MainMenuControler::hoverNext() {
     this->_model.setHoverButtonId(0);
 }
 
-void MainMenuControler::hoverPrev() {
-    if (this->_model.getHoverButtonId() > 0) {
+void SettingsControler::hoverPrev() {
+    if (this->_model.getHoverButtonId() > 0)
+    {
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId()].setState(false);
         (*this->_model.getButtonsM())[this->_model.getHoverButtonId() - 1].setState(true);
         this->_model.setHoverButtonId(this->_model.getHoverButtonId() - 1);
