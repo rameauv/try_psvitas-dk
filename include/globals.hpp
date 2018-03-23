@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SceneManager.hpp"
-#include "Key.hpp"
+#include "KeyVita.hpp"
 
 namespace globals
 {
