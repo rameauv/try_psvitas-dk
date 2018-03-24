@@ -1,10 +1,11 @@
 #include "SoundManagerSoloud.hpp"
 
-SoundMangerSoloud::SoundMangerSoloud() {
-    this->_gSoloud.init(); // Initialize SoLoud
+int SoundMangerSoloud::init() {
+    if (this->_gSoloud.init() != SoLoud::SO_NO_ERROR) // Initialize SoLoud
+        return (-1);
 }
 
-SoundMangerSoloud::~SoundMangerSoloud() {
+int SoundMangerSoloud::uninit() {
     this->_gSoloud.deinit();
 }
 

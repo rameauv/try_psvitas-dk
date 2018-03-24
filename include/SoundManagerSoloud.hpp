@@ -4,20 +4,22 @@
 #include <math.h>
 #include <psp2/audioout.h>
 
+#include "ISoundManager.hpp"
 #include "ISound.hpp"
+
 #include "SoundSoloud.hpp"
 
 #include "soloud.h"
 #include "soloud_wav.h"
 #include "soloud_speech.h"
 
-class SoundMangerSoloud {
+class SoundMangerSoloud : ISoundManager {
     private:
         SoLoud::Soloud _gSoloud; // SoLoud engine
     public:
-        SoundMangerSoloud();
-        ~SoundMangerSoloud();
+        virtual int init();
+        virtual int uninit();
     public:
-        int play(ISound* sound);
-        int stop(ISound* sound);
+        virtual int play(ISound* sound);
+        virtual int stop(ISound* sound);
 };
