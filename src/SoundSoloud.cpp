@@ -1,7 +1,8 @@
 #include "SoundSoloud.hpp"
 
 int SoundSoloud::Load(const std::string &path) {
-    _gWave.load(path.c_str()); // Load a wave
+    if (_gWave.load(path.c_str()) != SoLoud::SO_NO_ERROR) // Load a wave
+        return (-1);
     return (0);
 }
 
