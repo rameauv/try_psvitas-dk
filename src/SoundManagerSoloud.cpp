@@ -3,10 +3,12 @@
 int SoundMangerSoloud::init() {
     if (this->_gSoloud.init() != SoLoud::SO_NO_ERROR) // Initialize SoLoud
         return (-1);
+    return (0);
 }
 
 int SoundMangerSoloud::uninit() {
     this->_gSoloud.deinit();
+    return (0);
 }
 
 int SoundMangerSoloud::play(ISound* sound) {
