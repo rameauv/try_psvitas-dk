@@ -13,7 +13,8 @@ int SoundMangerSoloud::play(ISound* sound) {
     SoLoud::Wav *wav;
     if (!(wav = sound_soloud->getOriginal()))
         return (-1);
-    _gSoloud.play(*wav);
+    if (_gSoloud.play(*wav) != SoLoud::SO_NO_ERROR)
+        return (-1);
     return (0);
 }
 
