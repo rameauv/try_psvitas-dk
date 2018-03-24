@@ -4,6 +4,8 @@ OBJS     = 	src/main.o \
 			src/Services.o \
 			src/KeyVita.o \
 			src/GraphicVita.o \
+			src/SoundManagerSoloud.o \
+			src/SoundSoloud.o \
 			src/SceneManager.o \
 			src/SceneControler.o \
 			src/SplashScreenControler.o \
