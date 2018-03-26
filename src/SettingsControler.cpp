@@ -1,5 +1,5 @@
 #include "SettingsControler.hpp"
-#include "globals.hpp"
+#include "Services.hpp"
 #include <chrono>
 
 SettingsControler::SettingsControler()
@@ -22,23 +22,23 @@ void SettingsControler::init() {
 
 int SettingsControler::handleInput() {
     this->_view.render(this->_model.getInstance());
-    globals::key.update();
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
-        globals::sceneManager.load(Scene::MAIN_MENU);
-        if (globals::sceneManager.getNewSceneControler())
-            ((SettingsControler*)globals::sceneManager.getNewSceneControler())->init();
+    Services::key.update();
+    if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
+        Services::sceneManager.load(Scene::MAIN_MENU);
+        if (Services::sceneManager.getNewSceneControler())
+            ((SettingsControler*)Services::sceneManager.getNewSceneControler())->init();
     }
-    if (globals::key.getPressed() & SCE_CTRL_UP)
+    if (Services::key.getPressed() & SCE_CTRL_UP)
         this->hoverPrev();
-    if (globals::key.getPressed() & SCE_CTRL_DOWN)
+    if (Services::key.getPressed() & SCE_CTRL_DOWN)
         this->hoverNext();
-    if (globals::key.getDown() & SCE_CTRL_UP)
+    if (Services::key.getDown() & SCE_CTRL_UP)
         this->_model.setY(this->_model.getY() - 1);
-    if (globals::key.getDown() & SCE_CTRL_DOWN)
+    if (Services::key.getDown() & SCE_CTRL_DOWN)
         this->_model.setY(this->_model.getY() + 1);
-    if (globals::key.getDown() & SCE_CTRL_LEFT)
+    if (Services::key.getDown() & SCE_CTRL_LEFT)
         this->_model.setX(this->_model.getX() - 1);
-    if (globals::key.getDown() & SCE_CTRL_RIGHT)
+    if (Services::key.getDown() & SCE_CTRL_RIGHT)
         this->_model.setX(this->_model.getX() + 1);
     return (0);
 }

@@ -6,20 +6,20 @@
 #include "debugScreen.h"
 #define printf psvDebugScreenPrintf
 
-#include "globals.hpp"
+#include "Services.hpp"
 #include "GraphicVita.hpp"
 
 int main()
 {
 	psvDebugScreenInit();
-	Graphic::init();
-	globals::globalState = globals::STATE_RUN;
-	globals::sceneManager.load(Scene::SPLASH_SCREEN);
-	while (globals::globalState == globals::STATE_RUN) {
-		globals::sceneManager.getSceneControler()->handleInput();
-		globals::sceneManager.clean();
+	Services::graphic.init();
+	Services::state = Services::STATE_RUN;
+	Services::sceneManager.load(Scene::SPLASH_SCREEN);
+	while (Services::state == Services::STATE_RUN) {
+		Services::sceneManager.getSceneControler()->handleInput();
+		Services::sceneManager.clean();
 	}
-	Graphic::deinit();
+	Services::graphic.deinit();
 		sceKernelExitProcess(0);
 	return 0;
 }
