@@ -1,7 +1,7 @@
 TITLE_ID = VITA2DTST
 TARGET   = vita_dev_poc
 OBJS     = 	src/main.o \
-			src/globals.o \
+			src/Services.o \
 			src/KeyVita.o \
 			src/GraphicVita.o \
 			src/SceneManager.o \

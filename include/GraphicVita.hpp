@@ -4,6 +4,6 @@
 class Graphic
 {
     public:
-        static int init();
-        static int deinit();
+        int init();
+        int deinit();
 };

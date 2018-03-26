@@ -1,5 +1,5 @@
 #include "MainMenuControler.hpp"
-#include "globals.hpp"
+#include "Services.hpp"
 #include <chrono>
 
 MainMenuControler::MainMenuControler()
@@ -22,30 +22,30 @@ void MainMenuControler::init() {
 
 int MainMenuControler::handleInput() {
     this->_view.render(this->_model.getInstance());
-    globals::key.update();
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
-        globals::sceneManager.load(Scene::GAME);
-        if (globals::sceneManager.getNewSceneControler())
-            ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
+    Services::key.update();
+    if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
+        Services::sceneManager.load(Scene::GAME);
+        if (Services::sceneManager.getNewSceneControler())
+            ((MainMenuControler*)Services::sceneManager.getNewSceneControler())->init();
     }
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState()) {
-        globals::sceneManager.load(Scene::SETTINGS);
-        if (globals::sceneManager.getNewSceneControler())
-            ((MainMenuControler*)globals::sceneManager.getNewSceneControler())->init();
+    if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState()) {
+        Services::sceneManager.load(Scene::SETTINGS);
+        if (Services::sceneManager.getNewSceneControler())
+            ((MainMenuControler*)Services::sceneManager.getNewSceneControler())->init();
     }
-    if (globals::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
-		globals::globalState = globals::STATE_QUIT;
-    if (globals::key.getPressed() & SCE_CTRL_UP)
+    if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
+		Services::state = Services::STATE_QUIT;
+    if (Services::key.getPressed() & SCE_CTRL_UP)
         this->hoverPrev();
-    if (globals::key.getPressed() & SCE_CTRL_DOWN)
+    if (Services::key.getPressed() & SCE_CTRL_DOWN)
         this->hoverNext();
-    if (globals::key.getDown() & SCE_CTRL_UP)
+    if (Services::key.getDown() & SCE_CTRL_UP)
         this->_model.setY(this->_model.getY() - 1);
-    if (globals::key.getDown() & SCE_CTRL_DOWN)
+    if (Services::key.getDown() & SCE_CTRL_DOWN)
         this->_model.setY(this->_model.getY() + 1);
-    if (globals::key.getDown() & SCE_CTRL_LEFT)
+    if (Services::key.getDown() & SCE_CTRL_LEFT)
         this->_model.setX(this->_model.getX() - 1);
-    if (globals::key.getDown() & SCE_CTRL_RIGHT)
+    if (Services::key.getDown() & SCE_CTRL_RIGHT)
         this->_model.setX(this->_model.getX() + 1);
     return (0);
 }
