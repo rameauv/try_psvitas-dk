@@ -11,20 +11,18 @@ int SoundMangerSoloud::uninit() {
     return (0);
 }
 
-int SoundMangerSoloud::play(ISound* sound) {
-    SoundSoloud* sound_soloud = (SoundSoloud*)(sound);
+int SoundMangerSoloud::play(SoundSoloud& sound) {
     SoLoud::Wav *wav;
-    if (!(wav = sound_soloud->getOriginal()))
+    if (!(wav = sound.getOriginal()))
         return (-1);
     if (_gSoloud.play(*wav) != SoLoud::SO_NO_ERROR)
         return (-1);
     return (0);
 }
 
-int SoundMangerSoloud::stop(ISound* sound) {
-    SoundSoloud* sound_soloud = (SoundSoloud*)(sound);
+int SoundMangerSoloud::stop(SoundSoloud& sound) {
     SoLoud::Wav *wav;
-    if (!(wav = sound_soloud->getOriginal()))
+    if (!(wav = sound.getOriginal()))
         return (-1);
     _gSoloud.stopAudioSource(*wav);
     return (0);

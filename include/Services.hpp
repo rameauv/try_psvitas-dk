@@ -3,6 +3,7 @@
 #include "SceneManager.hpp"
 #include "KeyVita.hpp"
 #include "GraphicVita.hpp"
+#include "SoundManagerSoloud.hpp"
 
 namespace Services
 {
@@ -14,4 +15,5 @@ namespace Services
     extern SceneManager sceneManager;
     extern Key key;
     extern Graphic graphic;
+    extern SoundMangerSoloud soundManger;
 }

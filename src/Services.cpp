@@ -6,4 +6,5 @@ namespace Services
     SceneManager sceneManager;
     Key key;
     Graphic graphic;
+    SoundMangerSoloud soundManger;
 }

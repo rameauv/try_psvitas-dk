@@ -12,6 +12,8 @@ class MainMenuModel
         std::vector<ButtonModel> _buttons;
         unsigned int _hoverButtonId;
     public:
+        std::string _debug;
+    public:
         MainMenuModel():_buttons(3) {
             this->_hoverButtonId = 0;
             this->_buttons[0].init(50, 50, 200, 100, true, std::string("Solo"));

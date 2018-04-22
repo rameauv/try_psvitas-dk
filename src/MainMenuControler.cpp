@@ -7,7 +7,10 @@ MainMenuControler::MainMenuControler()
     // this->_gSoloud = new SoLoud::Soloud;
     // this->_gWave = new SoLoud::Wav;
     // this->_gSoloud->init(); // Initialize SoLoud
-    // this->_gWave->load("ux0:/music.ogg"); // Load a wave
+    if (_sound.load("ux0:/music.ogg") == -1) // Load a wave
+        _model._debug += "cannot load sound\n";
+    if (Services::soundManger.play(_sound) == -1)
+        _model._debug += "cannot play sound\n";
 }
 
 MainMenuControler::~MainMenuControler() {

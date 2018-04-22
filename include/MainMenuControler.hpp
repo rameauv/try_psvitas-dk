@@ -13,6 +13,7 @@
 // #include "soloud_wav.h"
 // #include "soloud_speech.h"
 //
+#include "SoundSoloud.hpp"
 #include "SceneControler.hpp"
 #include "MainMenuModel.hpp"
 #include "MainMenuView.hpp"
@@ -23,6 +24,7 @@ class MainMenuControler : public SceneControler
     private:
         MainMenuModel _model;
         MainMenuView _view;
+        SoundSoloud _sound;
         // SoLoud::Soloud* _gSoloud; // SoLoud engine
         // SoLoud::Wav* _gWave;      // One wave file
         ButtonModel _buttonModel1;
