@@ -13,6 +13,6 @@ class SoundSoloud {
     private:
         SoLoud::Wav _gWave;      // One wave file
     public:
-        virtual int load(const std::string &path);
+        int load(const std::string &path);
         SoLoud::Wav* getOriginal();
 };
