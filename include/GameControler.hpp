@@ -8,6 +8,7 @@
 #include <psp2/kernel/processmgr.h>
 
 #include <vita2d.h>
+#include "SoundSoloud.hpp"
 
 // //sound management headers
 // #include <stdint.h>
@@ -26,6 +27,7 @@ class GameControler : public SceneControler
     private:
         GameModel _model;
         GameView _view;
+        SoundSoloud _sound;
         // SoLoud::Soloud* _gSoloud; // SoLoud engine
         // SoLoud::Wav* _gWave;      // One wave file
     public:

@@ -25,8 +25,6 @@ class MainMenuControler : public SceneControler
         MainMenuModel _model;
         MainMenuView _view;
         SoundSoloud _sound;
-        // SoLoud::Soloud* _gSoloud; // SoLoud engine
-        // SoLoud::Wav* _gWave;      // One wave file
         ButtonModel _buttonModel1;
         ButtonModel _buttonModel2;
     private:
