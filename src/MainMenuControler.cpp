@@ -4,23 +4,15 @@
 
 MainMenuControler::MainMenuControler()
     : SceneControler(Scene::MAIN_MENU) {
-    // this->_gSoloud = new SoLoud::Soloud;
-    // this->_gWave = new SoLoud::Wav;
-    // this->_gSoloud->init(); // Initialize SoLoud
     if (_sound.load("ux0:/music.ogg") == -1) // Load a wave
         _model._debug += "cannot load sound\n";
-    if (Services::soundManger.play(_sound) == -1)
-        _model._debug += "cannot play sound\n";
+    Services::soundManger.play(_sound);
 }
 
 MainMenuControler::~MainMenuControler() {
-    // this->_gSoloud->deinit();
-    // delete this->_gSoloud;
-    // delete this->_gWave;
 }
 
 void MainMenuControler::init() {
-    // this->_gSoloud->play(*this->_gWave); // Play the wave
 }
 
 int MainMenuControler::handleInput() {

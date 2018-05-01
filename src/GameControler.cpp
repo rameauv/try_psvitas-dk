@@ -3,23 +3,18 @@
 
 GameControler::GameControler()
     : SceneControler(Scene::GAME) {
-    // this->_gSoloud = new SoLoud::Soloud;
-    // this->_gWave = new SoLoud::Wav;
-    // this->_gSoloud->init(); // Initialize SoLoud
-    // this->_gWave->load("ux0:/music.ogg"); // Load a wave
+    if (_sound.load("ux0:/music.ogg") != 0)
+        sceKernelExitProcess(0);
 }
 
 GameControler::~GameControler() {
-    // this->_gSoloud->deinit();
-    // delete this->_gSoloud;
-    // delete this->_gWave;
 }
 
 void GameControler::init() {
-    // this->_gSoloud->play(*this->_gWave); // Play the wave
+    Services::soundManger.play(_sound);
 }
 
-int GameControler::handleInput() {
+int GameControler::handleInput() { 
     this->_view.render(this->_model.getInstance());
     Services::key.update();
     if (Services::key.getPressed() & SCE_CTRL_SELECT)

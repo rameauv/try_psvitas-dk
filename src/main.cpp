@@ -12,6 +12,7 @@
 int main()
 {
 	psvDebugScreenInit();
+	Services::soundManger.init();
 	Services::graphic.init();
 	Services::state = Services::STATE_RUN;
 	Services::sceneManager.load(Scene::SPLASH_SCREEN);
