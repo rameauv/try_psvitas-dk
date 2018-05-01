@@ -26,12 +26,12 @@ int MainMenuControler::handleInput() {
     if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[0].getState()) {
         Services::sceneManager.load(Scene::GAME);
         if (Services::sceneManager.getNewSceneControler())
-            ((MainMenuControler*)Services::sceneManager.getNewSceneControler())->init();
+            ((GameControler*)Services::sceneManager.getNewSceneControler())->init();
     }
     if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[1].getState()) {
         Services::sceneManager.load(Scene::SETTINGS);
         if (Services::sceneManager.getNewSceneControler())
-            ((MainMenuControler*)Services::sceneManager.getNewSceneControler())->init();
+            ((SettingsControler*)Services::sceneManager.getNewSceneControler())->init();
     }
     if (Services::key.getPressed() & SCE_CTRL_CROSS && (*this->_model.getButtons())[2].getState())
 		Services::state = Services::STATE_QUIT;
