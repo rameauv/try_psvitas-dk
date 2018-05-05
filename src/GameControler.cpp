@@ -3,7 +3,7 @@
 
 GameControler::GameControler()
     : SceneControler(Scene::GAME) {
-    if (_sound.load("ux0:/music.ogg") != 0)
+    if (_sound.load("app0:/ressources/music.ogg") != 0)
         sceKernelExitProcess(0);
 }
 

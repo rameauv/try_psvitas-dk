@@ -4,20 +4,12 @@
 
 SettingsControler::SettingsControler()
     : SceneControler(Scene::SETTINGS) {
-    // this->_gSoloud = new SoLoud::Soloud;
-    // this->_gWave = new SoLoud::Wav;
-    // this->_gSoloud->init(); // Initialize SoLoud
-    // this->_gWave->load("ux0:/music.ogg"); // Load a wave
 }
 
 SettingsControler::~SettingsControler() {
-    // this->_gSoloud->deinit();
-    // delete this->_gSoloud;
-    // delete this->_gWave;
 }
 
 void SettingsControler::init() {
-    // this->_gSoloud->play(*this->_gWave); // Play the wave
 }
 
 int SettingsControler::handleInput() {

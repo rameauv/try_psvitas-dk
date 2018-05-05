@@ -4,7 +4,7 @@
 
 MainMenuControler::MainMenuControler()
     : SceneControler(Scene::MAIN_MENU) {
-    if (_sound.load("ux0:/music.ogg") == -1) // Load a wave
+    if (_sound.load("app0:/ressources/music.ogg") == -1) // Load a wave
         _model._debug += "cannot load sound\n";
     Services::soundManger.play(_sound);
 }

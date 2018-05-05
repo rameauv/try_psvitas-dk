@@ -1,5 +1,13 @@
 TITLE_ID = VITA2DTST
+
+RESSOURCES_DIR_SRC = ./ressources
+
+RESSOURCES_DIR_DST = ressources
+
+RESSOURCES_FILES = music.ogg
+
 TARGET   = vita_dev_poc
+
 OBJS     = 	src/main.o \
 			src/Services.o \
 			src/KeyVita.o \
@@ -36,7 +44,7 @@ all: $(TARGET).vpk
 
 %.vpk: eboot.bin
 	vita-mksfoex -s TITLE_ID=$(TITLE_ID) "$(TARGET)" param.sfo
-	vita-pack-vpk -s param.sfo -b eboot.bin $@
+	vita-pack-vpk -s param.sfo -b eboot.bin -a $(RESSOURCES_DIR_SRC)/$(RESSOURCES_FILES)=$(RESSOURCES_DIR_DST)/$(RESSOURCES_FILES) $@
 
 eboot.bin: $(TARGET).velf
 	vita-make-fself -s $< $@
