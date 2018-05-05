@@ -68,6 +68,7 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ".vscode/intellisense-db/intellisense"
             },
+            "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
             "cppStandard": "c++17"
         },

@@ -14,7 +14,7 @@ void MainMenuView::render(const MainMenuModel* model) {
         return;
     vita2d_start_drawing();
     vita2d_clear_screen();
-    vita2d_pgf_draw_text(this->_pgf, 700, 30, RGBA8(0,255,0,255), 1.0f, "MainMenu");
+    vita2d_pgf_draw_text(this->_pgf, 400, 30, RGBA8(0,255,0,255), 1.0f, model->_debug.c_str());
 
     for (unsigned int i = 0; i < model->getButtons()->size(); i++) {
         if (i < this->_buttons.size())
