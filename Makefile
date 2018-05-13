@@ -31,7 +31,7 @@ OBJS     = 	src/main.o \
 			
 PSVITAIP = 192.168.1.14
 
-LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
+LIBS = -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lScePgf_stub -lScePvf_stub \
 	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lsoloud -lpthread -lm -lSceAudio_stub -lSceDisplay_stub -lSceNet_stub -lSceNetCtl_stub
 
